@@ -20,18 +20,18 @@ Feature: Schedulable photos from remote controlled telescope
     Then the picture is not taken and the user needs to reschedule
     
   Scenario: Picture scheduled and taken
-    Given NASA wants to take a photo of the North Star at 8:00 pm, October 1, 2014
+    Given wants to schedule a photo of the North Star at 8:00 pm, October 1, 2014
     When the time is 8:00 pm, October 1, 2014
     Then the picture is taken and presented to NASA
 
   Scenario: Time conflict
-    Given NASA wants to take a photo of the North Star at 8:00 pm, October 1, 2014
+    Given NASA wants to schedule a photo of the North Star at 8:00 pm, October 1, 2014
     And Jarod has already scheduled a photo at 8:00 pm, October 1, 2014
     When the time is 8:00 pm, October 1, 2014
     Then NASA's picture is not taken and they are notified that they need to reschedule
     
   Scenario: Sky location is not visible
-    Given NASA wants to take a photo of the North Star at 8:00 pm, October 1, 2014
+    Given NASA wants to schedule a photo of the North Star at 8:00 pm, October 1, 2014
     And the North Star is not visible at that time
     When the time is 8:00 pm, October 1, 2014
     Then NASA's picture is not taken and they are notified that they need to reschedule
