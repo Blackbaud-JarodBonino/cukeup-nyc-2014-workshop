@@ -2,6 +2,10 @@
 Feature: Schedulable photos from remote controlled telescope
 
   Ability to schedule photos from the telescope
+  
+  -sky location must be visible at time of scheduled photo
+  -requested schedule slot must be available
+  -requested schedule time must be in the future  
 
   Scenario: Picture scheduled and taken
     Given a user wants to take a photo of the North Star at 8:00 pm, for 10 minutes on October 1, 2014
@@ -28,7 +32,8 @@ Feature: Schedulable photos from remote controlled telescope
     Given NASA wants to schedule a photo of the North Star at 8:00 pm, October 1, 2014
     And Jarod has already scheduled a photo at 8:00 pm, October 1, 2014
     When the time is 8:00 pm, October 1, 2014
-    Then NASA's picture is not taken and they are notified that they need to reschedule
+    Then NASA's picture is not taken 
+    And they are presented with the following message: "Another user has already scheduled a photo for tha time."
     
   Scenario: Sky location is not visible
     Given NASA wants to schedule a photo of the North Star at 8:00 pm, October 1, 2014
