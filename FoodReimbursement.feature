@@ -38,7 +38,8 @@ Feature: New feature
     When I spend $14.99 for lunch  
     Then I should receive $14.99 in reimbursement
     
-  Scenario: Sales tax on alcohol is not reimbursed
+  Scenario: Alcohol and the associated sales tax is not reimbursed
     Given Sales tax is 6%
     When I spend $10.00 for alcohol
+    And I spend $5.00 for food
     Then I should receive $9.40 in reimbursement  
