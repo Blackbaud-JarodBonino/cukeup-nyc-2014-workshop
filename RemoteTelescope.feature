@@ -1,7 +1,7 @@
 @wip
-Feature: Schudulable photos from remote controlled telescope
+Feature: Schedulable photos from remote controlled telescope
 
-  Write a description of your feature here.
+  Ability to schedule photos from the telescope
 
   Scenario: Picture scheduled and taken
     Given a user wants to take a photo of the North Star at 8:00 pm, October 1, 2014
